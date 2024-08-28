@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "drewtweaks",
+  "version": "${version}",
+  "name": "DrewTweaks",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/drewtweaks/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "modmenu": [
+      "xyz.drewcification.drewtweaks.integration.ModMenuIntegration"
+    ],
+    "client": [
+      "xyz.drewcification.drewtweaks.client.DrewTweaksClient"
+    ],
+    "main": [
+      "xyz.drewcification.drewtweaks.DrewTweaks"
+    ]
+  },
+  "mixins": [
+    "drewtweaks.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
