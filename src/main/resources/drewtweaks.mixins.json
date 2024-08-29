@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "client.entity.EntityRendererMixin"
+    "client.entity.EntityRendererMixin",
+    "client.entity.ItemInHandRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

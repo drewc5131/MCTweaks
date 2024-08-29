@@ -3,7 +3,6 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.world.entity.Entity;
@@ -31,9 +30,8 @@ public abstract class EntityRendererMixin{
     )
 
     private void nameTag$setScale(PoseStack poseStack, float x, float y, float z, Operation<Void> operation, Entity entity){
-        TweakConfig conf = AutoConfig.getConfigHolder(TweakConfig.class).getConfig();
-        float scale = conf.getBaseNameTagScale();
-        if(conf.getAlphaNameTagScaling()) {
+        float scale = TweakConfig.baseNameTagScale;
+        if(TweakConfig.alphaNameTagScaling) {
             double distance = this.entityRenderDispatcher.distanceToSqr(entity);
             scale *= (float) (Math.sqrt(Math.sqrt(distance)) / 2.0D);
         }
